@@ -1,0 +1,48 @@
+// app/page.tsx
+'use client';
+
+import Link from 'next/link';
+
+export default function LandingPage() {
+  return (
+    <div className="flex flex-col justify-between p-6 h-full flex-grow">
+      {/* Top Branding / Logic Anchor */}
+      <div className="pt-8">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-400 text-xs font-medium mb-6">
+          <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse"></span>
+          Live Kenya Algorithm Data Active
+        </div>
+        
+        <h1 className="text-3xl font-extrabold tracking-tight leading-tight mb-4 text-white">
+          Stop Guessing What Works. <span className="text-rose-500">Go Viral Instantly.</span>
+        </h1>
+        
+        <p className="text-slate-400 text-sm leading-relaxed mb-6">
+          Every day you post blind, you waste hours of labor. Access real-time verified hooks and plug-and-play templates tailored strictly for the Kenyan market.
+        </p>
+      </div>
+
+      {/* Social Proof / Trust Badge */}
+      <div className="bg-slate-950/50 p-4 rounded-xl border border-slate-800/80 mb-8">
+        <div className="text-xs text-slate-400 mb-1 font-semibold uppercase tracking-wider">Trusted by operators across</div>
+        <div className="text-sm font-bold text-slate-200">Nairobi TikTok & Instagram Ecosystems</div>
+      </div>
+
+      {/* Action Area with Urgency */}
+      <div className="space-y-4 pb-6">
+        <Link 
+          href="/onboarding"
+          className="w-full py-4 bg-rose-600 hover:bg-rose-500 text-white font-semibold rounded-xl shadow-lg shadow-rose-600/30 flex items-center justify-center gap-2 transition-all active:scale-95 text-center"
+        >
+          Track Current Trends Now
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </Link>
+        <p className="text-center text-xs text-slate-500">
+          Tick-tock... While competitors sleep on this, secure your access.
+        </p>
+      </div>
+    </div>
+  );
+}
