@@ -2,48 +2,72 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Sparkles, ArrowRight, ShieldCheck, Zap } from 'lucide-react';
+import { Sparkles, ArrowRight, ShieldCheck, Zap, Layers, Command } from 'lucide-react';
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans p-6 max-w-md mx-auto flex flex-col justify-between">
-      {/* Top Banner */}
-      <div className="space-y-6">
-        <div className="inline-flex items-center gap-1.5 bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-medium px-3 py-1 rounded-full">
-          <Zap className="w-3.5 h-3.5 text-purple-400" /> Live Algorithm Data Active
+    <main className="min-h-screen flex flex-col justify-between p-6 max-w-md mx-auto">
+      {/* Navigation Header */}
+      <nav className="flex items-center justify-between py-4">
+        <div className="flex items-center space-x-2">
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-purple-600 to-indigo-500 flex items-center justify-center font-bold text-white shadow-md shadow-purple-500/20 text-xs">
+            GV
+          </div>
+          <span className="font-semibold text-sm tracking-tight text-white">GoViral</span>
+        </div>
+        <div className="flex items-center gap-1 bg-slate-900/80 border border-slate-800/80 px-2.5 py-1 rounded-full text-[11px] text-purple-400 backdrop-blur-md">
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+          Engine v2.4
+        </div>
+      </nav>
+
+      {/* Hero Content Section */}
+      <div className="space-y-6 my-auto py-8">
+        <div className="inline-flex items-center gap-1.5 bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-medium px-3 py-1 rounded-full backdrop-blur-sm">
+          <Zap className="w-3.5 h-3.5 text-purple-400" /> Real-Time Algorithm Sync
         </div>
 
-        {/* Hero Copy */}
         <div className="space-y-3">
-          <h1 className="text-3xl font-extrabold tracking-tight text-white leading-tight">
-            Stop Guessing What Works. <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400">Go Viral Instantly.</span>
+          <h1 className="text-4xl font-extrabold tracking-tight text-white leading-[1.15]">
+            Stop Guessing. <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-indigo-300 to-purple-200">
+              Go Viral Instantly.
+            </span>
           </h1>
-          <p className="text-sm text-slate-300 leading-relaxed">
-            Every day you post blind, you waste hours of labor. Access real-time verified hooks and plug-and-play templates tailored for high-growth creators.
+          <p className="text-sm text-slate-400 leading-relaxed">
+            Unlock verified behavioral hooks and plug-and-play components designed to capture attention and scale creator distribution effortlessly.
           </p>
         </div>
 
-        {/* Trust Badges */}
-        <div className="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-4 space-y-2 backdrop-blur-sm">
-          <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Trusted by operators across</p>
-          <p className="text-sm font-medium text-slate-200">Top Creator & Brand Ecosystems</p>
+        {/* Feature Grid Preview Card */}
+        <div className="bg-slate-900/40 border border-slate-800/80 rounded-2xl p-4 space-y-3 backdrop-blur-md shadow-xl">
+          <div className="flex items-center justify-between text-xs text-slate-400 pb-2 border-b border-slate-800/60">
+            <span className="flex items-center gap-1.5"><Layers className="w-3.5 h-3.5 text-purple-400" /> Curated Vault</span>
+            <span className="text-purple-400 font-mono">100% Verified</span>
+          </div>
+          <div className="space-y-2 text-xs">
+            <div className="flex items-center justify-between p-2 rounded-xl bg-slate-950/40 border border-slate-800/40">
+              <span className="text-slate-200 font-medium">High-Retention Hooks</span>
+              <span className="text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">+340% Avg</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Action CTA Area */}
-      <div className="space-y-4 pt-6">
+      {/* Footer Call to Action */}
+      <div className="space-y-4 pt-4">
         <Link 
           href="/dashboard"
-          className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-bold py-3.5 px-4 rounded-xl shadow-lg shadow-purple-600/30 transition-all text-sm"
+          className="w-full flex items-center justify-center gap-2 bg-white hover:bg-slate-100 text-slate-950 font-semibold py-3.5 px-4 rounded-xl shadow-lg shadow-white/5 transition-all text-sm group"
         >
-          <span>Track Current Trends Now</span>
-          <ArrowRight className="w-4 h-4" />
+          <span>Launch App Experience</span>
+          <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
         </Link>
         
-        <div className="flex items-center justify-center gap-1.5 text-xs text-slate-500">
+        <div className="flex items-center justify-center gap-1.5 text-[11px] text-slate-500">
           <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" /> Instant access • No credit card required
         </div>
       </div>
-    </div>
+    </main>
   );
 }
