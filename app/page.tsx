@@ -24,7 +24,7 @@ export default function LandingPage() {
       {/* Hero Content Section */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', margin: 'auto 0', padding: '32px 0' }}>
         <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'rgba(242, 75, 7, 0.1)', border: '1px solid rgba(242, 75, 7, 0.25)', color: '#fdba74', fontSize: '12px', fontWeight: 500, padding: '6px 12px', borderRadius: '9999px', width: 'fit-content' }}>
-          ⚡ Real-Time Algorithm Sync
+          Real-Time Algorithm Sync
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -35,14 +35,14 @@ export default function LandingPage() {
             </span>
           </h1>
           <p style={{ fontSize: '14px', color: '#94a3b8', lineHeight: 1.5, margin: 0 }}>
-            Unlock verified behavioral hooks and components designed to capture attention and scale creator distribution effortlessly.
+            Unlock unbeatable marketing and components designed to capture attention and scale creator distribution effortlessly.
           </p>
         </div>
 
         {/* Feature Preview Card */}
         <div style={{ background: 'rgba(15, 23, 42, 0.6)', border: '1px solid rgba(51, 65, 85, 0.8)', borderRadius: '16px', padding: '16px', display: 'flex', flexDirection: 'column', gap: '12px', backdropFilter: 'blur(12px)' }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: '12px', color: '#94a3b8', paddingBottom: '8px', borderBottom: '1px solid rgba(51, 65, 85, 0.6)' }}>
-            <span>📦 Curated Vault</span>
+            <span>Curated Vault</span>
             <span style={{ color: '#f24b07', fontFamily: 'monospace' }}>100% Verified</span>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px', borderRadius: '12px', background: 'rgba(2, 6, 23, 0.6)', border: '1px solid rgba(51, 65, 85, 0.4)', fontSize: '12px' }}>
@@ -63,7 +63,7 @@ export default function LandingPage() {
         </Link>
         
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px', fontSize: '12px', color: '#64748b' }}>
-          <span>🛡️</span> Instant access • No credit card required
+          <span>Instant access • No credit card required</span>
         </div>
       </div>
     </main>
