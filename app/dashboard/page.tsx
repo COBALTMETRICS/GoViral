@@ -2,81 +2,84 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Flame, Bookmark, TrendingUp, ArrowUpRight, ChevronLeft, Sparkles } from 'lucide-react';
 
 export default function DashboardPage() {
   return (
-    <div className="min-h-screen bg-[#090D16] text-slate-100 font-sans p-4 max-w-md mx-auto">
+    <div style={{ backgroundColor: '#090D16', color: '#fefefe', minHeight: '100vh', padding: '24px', maxWidth: '420px', margin: '0 auto', fontFamily: 'system-ui, sans-serif' }}>
+      
       {/* Top Header */}
-      <header className="flex items-center justify-between py-4 border-b border-slate-800/80 mb-6">
-        <div className="flex items-center space-x-2.5">
-          <Link href="/" className="w-7 h-7 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white transition-colors">
-            <ChevronLeft className="w-4 h-4" />
+      <header style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingBottom: '20px', borderBottom: '1px solid rgba(51, 65, 85, 0.6)', marginBottom: '24px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <Link href="/" style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(15, 23, 42, 0.8)', border: '1px solid rgba(51, 65, 85, 0.8)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#94a3b8', textDecoration: 'none' }}>
+            ←
           </Link>
-          <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-purple-600 to-indigo-500 flex items-center justify-center font-bold text-white shadow-md shadow-purple-500/20 text-xs">
+          <div style={{ width: '32px', height: '32px', borderRadius: '8px', background: '#f24b07', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', color: '#fefefe', fontSize: '12px', boxShadow: '0 4px 12px rgba(242, 75, 7, 0.3)' }}>
             GV
           </div>
           <div>
-            <h1 className="font-bold text-xs tracking-wide text-white">GoViral Engine</h1>
-            <p className="text-[10px] text-purple-400">Pro Workspace</p>
+            <h1 style={{ fontWeight: 700, fontSize: '13px', letterSpacing: '-0.01em', margin: 0 }}>Goviral Engine</h1>
+            <p style={{ fontSize: '10px', color: '#f24b07', margin: 0, fontWeight: 500 }}>Pro Workspace</p>
           </div>
         </div>
-        <div className="bg-purple-500/10 border border-purple-500/20 px-3 py-1 rounded-full text-[11px] text-purple-300 font-medium">
-          ⚡ 3 Free Uses Left
+        <div style={{ background: 'rgba(242, 75, 7, 0.1)', border: '1px solid rgba(242, 75, 7, 0.25)', padding: '4px 10px', borderRadius: '9999px', fontSize: '11px', color: '#fdba74', fontWeight: 500 }}>
+          3 Free Uses Left
         </div>
       </header>
 
       {/* Main Container */}
-      <main className="space-y-5">
+      <main style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+        
         {/* Master Rule Banner */}
-        <div className="bg-gradient-to-br from-purple-950/40 via-slate-900/60 to-slate-900 border border-purple-500/20 rounded-2xl p-4 shadow-xl backdrop-blur-md">
-          <div className="flex items-center space-x-2 mb-1.5">
-            <span className="text-amber-400 text-xs">👑</span>
-            <span className="text-[11px] font-semibold uppercase tracking-wider text-purple-300">The Master Rule</span>
+        <div style={{ background: 'rgba(15, 23, 42, 0.6)', border: '1px solid rgba(242, 75, 7, 0.3)', borderRadius: '16px', padding: '16px', boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.3)', backdropFilter: 'blur(12px)' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '8px' }}>
+            <span style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#f24b07' }}>The Master Rule</span>
           </div>
-          <p className="text-xs font-medium italic text-slate-300 leading-relaxed">
+          <p style={{ fontSize: '13px', fontWeight: 500, fontStyle: 'italic', color: '#cbd5e1', margin: 0, lineHeight: 1.4 }}>
             &ldquo;Content is King and Distribution is Queen. Build Your Viral.&rdquo;
           </p>
         </div>
 
         {/* Active Trends Section */}
-        <div className="space-y-3">
-          <div className="flex items-center justify-between">
-            <h2 className="text-sm font-bold tracking-tight text-white flex items-center gap-1.5">
-              <TrendingUp className="w-4 h-4 text-purple-400" /> Active Market Trends
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+            <h2 style={{ fontSize: '14px', fontWeight: 700, letterSpacing: '-0.01em', color: '#fefefe', margin: 0 }}>
+              Active Market Trends
             </h2>
           </div>
 
           {/* Action Tabs */}
-          <div className="flex gap-2 text-xs">
-            <button className="flex items-center gap-1 bg-amber-500/10 border border-amber-500/30 text-amber-300 px-3 py-1.5 rounded-xl font-medium shadow-sm">
-              <Flame className="w-3.5 h-3.5 text-amber-400" /> Live Feed
+          <div style={{ display: 'flex', gap: '8px', fontSize: '12px' }}>
+            <button style={{ display: 'flex', alignItems: 'center', gap: '6px', backgroundColor: 'rgba(242, 75, 7, 0.15)', border: '1px solid rgba(242, 75, 7, 0.4)', color: '#fdba74', padding: '8px 12px', borderRadius: '10px', fontWeight: 600, cursor: 'pointer' }}>
+              Live Feed
             </button>
-            <button className="flex items-center gap-1 bg-slate-900/60 border border-slate-800 text-slate-400 px-3 py-1.5 rounded-xl font-medium hover:text-white transition-colors">
-              <Bookmark className="w-3.5 h-3.5 text-slate-400" /> Saved Templates
+            <button style={{ display: 'flex', alignItems: 'center', gap: '6px', backgroundColor: 'rgba(15, 23, 42, 0.6)', border: '1px solid rgba(51, 65, 85, 0.8)', color: '#94a3b8', padding: '8px 12px', borderRadius: '10px', fontWeight: 500, cursor: 'pointer' }}>
+              Saved Templates
             </button>
           </div>
 
           {/* Trend Card */}
-          <div className="bg-slate-900/50 border border-slate-800/80 rounded-2xl p-4 space-y-3.5 shadow-xl backdrop-blur-md">
-            <div className="flex items-center justify-between text-xs">
-              <span className="text-emerald-400 font-semibold bg-emerald-500/10 px-2 py-0.5 rounded-md border border-emerald-500/20">
+          <div style={{ background: 'rgba(15, 23, 42, 0.6)', border: '1px solid rgba(51, 65, 85, 0.8)', borderRadius: '16px', padding: '16px', display: 'flex', flexDirection: 'column', gap: '14px', boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.3)', backdropFilter: 'blur(12px)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: '11px' }}>
+              <span style={{ color: '#34d399', fontWeight: 600, backgroundColor: 'rgba(52, 211, 153, 0.1)', padding: '3px 8px', borderRadius: '6px', border: '1px solid rgba(52, 211, 153, 0.2)' }}>
                 +340% Surging Retention
               </span>
-              <span className="text-slate-400 font-mono text-[11px]">84.2% (3-sec)</span>
+              <span style={{ color: '#94a3b8', fontFamily: 'monospace' }}>84.2% (3-sec)</span>
             </div>
 
-            <p className="text-xs font-semibold text-slate-100 leading-snug">
-              &ldquo;Never buy inventory before testing this high-conversion angle...&rdquo;
-            </p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+              <span style={{ fontSize: '10px', textTransform: 'uppercase', letterSpacing: '0.05em', color: '#f24b07', fontWeight: 600 }}>Unbeatable Marketing</span>
+              <p style={{ fontSize: '13px', fontWeight: 600, color: '#fefefe', margin: 0, lineHeight: 1.4 }}>
+                &ldquo;Never buy inventory before testing this high-conversion angle...&rdquo;
+              </p>
+            </div>
 
-            <div className="bg-slate-950/60 rounded-xl p-2.5 flex items-center justify-between border border-slate-800/60">
-              <div className="flex items-center space-x-2 text-xs text-slate-300">
-                <span className="text-purple-400">🎵</span>
-                <span className="truncate max-w-[190px] text-[11px]">Viral Momentum Audio Vol. 4</span>
+            <div style={{ backgroundColor: 'rgba(2, 6, 23, 0.6)', borderRadius: '12px', padding: '10px 12px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', border: '1px solid rgba(51, 65, 85, 0.6)' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '12px', color: '#cbd5e1' }}>
+                <span style={{ color: '#f24b07', fontWeight: bold => 700 }}>♫</span>
+                <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', maxWidth: '180px', fontSize: '11px' }}>Viral Momentum Audio Vol. 4</span>
               </div>
-              <button className="text-xs text-purple-400 hover:text-purple-300 font-semibold flex items-center gap-0.5 bg-purple-500/10 px-2 py-1 rounded-lg border border-purple-500/20">
-                Pair <ArrowUpRight className="w-3 h-3" />
+              <button style={{ fontSize: '11px', color: '#fefefe', backgroundColor: '#f24b07', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '4px', padding: '6px 10px', borderRadius: '8px', border: 'none', cursor: 'pointer' }}>
+                Pair →
               </button>
             </div>
           </div>
