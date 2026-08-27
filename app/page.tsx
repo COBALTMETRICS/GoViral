@@ -1,47 +1,48 @@
-// app/page.tsx
 'use client';
 
+import React from 'react';
 import Link from 'next/link';
+import { Sparkles, ArrowRight, ShieldCheck, Zap } from 'lucide-react';
 
 export default function LandingPage() {
   return (
-    <div className="flex flex-col justify-between p-6 h-full flex-grow">
-      {/* Top Branding / Logic Anchor */}
-      <div className="pt-8">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-400 text-xs font-medium mb-6">
-          <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse"></span>
-          Live Kenya Algorithm Data Active
+    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans p-6 max-w-md mx-auto flex flex-col justify-between">
+      {/* Top Banner */}
+      <div className="space-y-6">
+        <div className="inline-flex items-center gap-1.5 bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-medium px-3 py-1 rounded-full">
+          <Zap className="w-3.5 h-3.5 text-purple-400" /> Live Kenya Algorithm Data Active
         </div>
-        
-        <h1 className="text-3xl font-extrabold tracking-tight leading-tight mb-4 text-white">
-          Stop Guessing What Works. <span className="text-rose-500">Go Viral Instantly.</span>
-        </h1>
-        
-        <p className="text-slate-400 text-sm leading-relaxed mb-6">
-          Every day you post blind, you waste hours of labor. Access real-time verified hooks and plug-and-play templates tailored strictly for the Kenyan market.
-        </p>
+
+        {/* Hero Copy */}
+        <div className="space-y-3">
+          <h1 className="text-3xl font-extrabold tracking-tight text-white leading-tight">
+            Stop Guessing What Works. <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400">Go Viral Instantly.</span>
+          </h1>
+          <p className="text-sm text-slate-300 leading-relaxed">
+            Every day you post blind, you waste hours of labor. Access real-time verified hooks and plug-and-play templates tailored strictly for the Kenyan market.
+          </p>
+        </div>
+
+        {/* Trust Badges */}
+        <div className="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-4 space-y-2 backdrop-blur-sm">
+          <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Trusted by operators across</p>
+          <p className="text-sm font-medium text-slate-200">Nairobi TikTok & Instagram Ecosystems</p>
+        </div>
       </div>
 
-      {/* Social Proof / Trust Badge */}
-      <div className="bg-slate-950/50 p-4 rounded-xl border border-slate-800/80 mb-8">
-        <div className="text-xs text-slate-400 mb-1 font-semibold uppercase tracking-wider">Trusted by operators across</div>
-        <div className="text-sm font-bold text-slate-200">Nairobi TikTok & Instagram Ecosystems</div>
-      </div>
-
-      {/* Action Area with Urgency */}
-      <div className="space-y-4 pb-6">
+      {/* Action CTA Area */}
+      <div className="space-y-4 pt-6">
         <Link 
           href="/onboarding"
-          className="w-full py-4 bg-rose-600 hover:bg-rose-500 text-white font-semibold rounded-xl shadow-lg shadow-rose-600/30 flex items-center justify-center gap-2 transition-all active:scale-95 text-center"
+          className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-bold py-3.5 px-4 rounded-xl shadow-lg shadow-purple-600/30 transition-all text-sm"
         >
-          Track Current Trends Now
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-          </svg>
+          <span>Track Current Trends Now</span>
+          <ArrowRight className="w-4 h-4" />
         </Link>
-        <p className="text-center text-xs text-slate-500">
-          Tick-tock... While competitors sleep on this, secure your access.
-        </p>
+        
+        <div className="flex items-center justify-center gap-1.5 text-xs text-slate-500">
+          <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" /> Instant access • No credit card required
+        </div>
       </div>
     </div>
   );
