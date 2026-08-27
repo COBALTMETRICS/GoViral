@@ -13,6 +13,7 @@ export default function DashboardPage() {
     caption: string;
     music: string;
     retention: string;
+    sourceUrl: string;
   }>(null);
 
   const handleRunIntelligence = (e: React.FormEvent) => {
@@ -26,7 +27,8 @@ export default function DashboardPage() {
         videoAngle: `High-retention ${sector} pattern interrupt focusing on consumer pain points.`,
         caption: `Stop scrolling if you want to scale in ${country}. Here is the exact framework...`,
         music: `Trending Audio - ${sector} Momentum Vol. 2`,
-        retention: '+412% Surging Retention'
+        retention: '+412% Surging Retention',
+        sourceUrl: socialLink || 'https://tiktok.com'
       });
     }, 1200);
   };
@@ -128,14 +130,21 @@ export default function DashboardPage() {
           </form>
         </div>
 
-        {/* Results Box */}
+        {/* Results Box with Video Output Link */}
         {result && (
           <div style={{ background: 'rgba(15, 23, 42, 0.9)', border: '1px solid rgba(242, 75, 7, 0.4)', borderRadius: '16px', padding: '16px', display: 'flex', flexDirection: 'column', gap: '12px', boxShadow: '0 10px 25px -5px rgba(242, 75, 7, 0.2)' }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: '11px' }}>
               <span style={{ color: '#34d399', fontWeight: 600, backgroundColor: 'rgba(52, 211, 153, 0.1)', padding: '3px 8px', borderRadius: '6px', border: '1px solid rgba(52, 211, 153, 0.2)' }}>
                 {result.retention}
               </span>
-              <span style={{ color: '#f24b07', fontWeight: 600 }}>Optimized for {country}</span>
+              <a 
+                href={result.sourceUrl} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                style={{ color: '#fdba74', fontWeight: 600, textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '4px' }}
+              >
+                Watch Best Performing Video ↗
+              </a>
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
