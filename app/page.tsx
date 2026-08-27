@@ -2,72 +2,70 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ArrowRight, ShieldCheck, Zap, Layers } from 'lucide-react';
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-[#090D16] text-slate-100 flex flex-col justify-between p-6 max-w-md mx-auto font-sans">
+    <main style={{ backgroundColor: '#090D16', color: '#F8FAFC', minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: '24px', maxWidth: '420px', margin: '0 auto', fontFamily: 'system-ui, sans-serif' }}>
+      
       {/* Navigation Header */}
-      <nav className="flex items-center justify-between py-2">
-        <div className="flex items-center space-x-2">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-purple-600 to-indigo-500 flex items-center justify-center font-bold text-white shadow-md shadow-purple-500/20 text-xs">
+      <nav style={{ display: 'flex', alignItems: 'center', justifyContent: 'between', paddingBottom: '16px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <div style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'linear-gradient(to top right, #9333ea, #6366f1)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', color: 'white', fontSize: '12px', boxShadow: '0 4px 12px rgba(147, 51, 234, 0.3)' }}>
             GV
           </div>
-          <span className="font-semibold text-sm tracking-tight text-white">GoViral</span>
+          <span style={{ fontWeight: 600, fontSize: '14px', letterSpacing: '-0.01em' }}>GoViral</span>
         </div>
-        <div className="flex items-center gap-1.5 bg-slate-900/80 border border-slate-800/80 px-3 py-1 rounded-full text-xs text-purple-400 backdrop-blur-md">
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+        <div style={{ display: 'flex', alignItems: 'center', gap: '6px', background: 'rgba(15, 23, 42, 0.8)', border: '1px solid rgba(51, 65, 85, 0.8)', padding: '4px 12px', borderRadius: '9999px', fontSize: '12px', color: '#c084fc' }}>
+          <span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#34d399' }} />
           Engine v2.4
         </div>
       </nav>
 
       {/* Hero Content Section */}
-      <div className="space-y-6 my-auto py-8">
-        <div className="inline-flex items-center gap-1.5 bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-medium px-3 py-1.5 rounded-full backdrop-blur-sm">
-          <Zap className="w-3.5 h-3.5 text-purple-400" /> Real-Time Algorithm Sync
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', margin: 'auto 0', padding: '32px 0' }}>
+        <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'rgba(147, 51, 234, 0.1)', border: '1px solid rgba(147, 51, 234, 0.2)', color: '#d8b4fe', fontSize: '12px', fontWeight: 500, padding: '6px 12px', borderRadius: '9999px', width: 'fit-content' }}>
+          ⚡ Real-Time Algorithm Sync
         </div>
 
-        <div className="space-y-3">
-          <h1 className="text-3xl font-extrabold tracking-tight text-white leading-tight">
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+          <h1 style={{ fontSize: '32px', fontWeight: 800, letterSpacing: '-0.03em', lineHeight: 1.15, margin: 0 }}>
             Stop Guessing. <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-indigo-300 to-purple-200">
+            <span style={{ background: 'linear-gradient(to right, #c084fc, #818cf8, #e9d5ff)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
               Go Viral Instantly.
             </span>
           </h1>
-          <p className="text-sm text-slate-400 leading-relaxed">
+          <p style={{ fontSize: '14px', color: '#94a3b8', lineHeight: 1.5, margin: 0 }}>
             Unlock verified behavioral hooks and components designed to capture attention and scale creator distribution effortlessly.
           </p>
         </div>
 
         {/* Feature Preview Card */}
-        <div className="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-4 space-y-3 backdrop-blur-md shadow-xl">
-          <div className="flex items-center justify-between text-xs text-slate-400 pb-2 border-b border-slate-800/60">
-            <span className="flex items-center gap-1.5"><Layers className="w-3.5 h-3.5 text-purple-400" /> Curated Vault</span>
-            <span className="text-purple-400 font-mono">100% Verified</span>
+        <div style={{ background: 'rgba(15, 23, 42, 0.6)', border: '1px solid rgba(51, 65, 85, 0.8)', borderRadius: '16px', padding: '16px', display: 'flex', flexDirection: 'column', gap: '12px', backdropFilter: 'blur(12px)' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'between', fontSize: '12px', color: '#94a3b8', paddingBottom: '8px', borderBottom: '1px solid rgba(51, 65, 85, 0.6)' }}>
+            <span>📦 Curated Vault</span>
+            <span style={{ color: '#c084fc', fontFamily: 'monospace' }}>100% Verified</span>
           </div>
-          <div className="space-y-2 text-xs">
-            <div className="flex items-center justify-between p-2.5 rounded-xl bg-slate-950/60 border border-slate-800/40">
-              <span className="text-slate-200 font-medium">High-Retention Hooks</span>
-              <span className="text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">+340% Avg</span>
-            </div>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'between', padding: '10px', borderRadius: '12px', background: 'rgba(2, 6, 23, 0.6)', border: '1px solid rgba(51, 65, 85, 0.4)', fontSize: '12px' }}>
+            <span style={{ color: '#f1f5f9', fontWeight: 500 }}>High-Retention Hooks</span>
+            <span style={{ color: '#34d399', backgroundColor: 'rgba(52, 211, 153, 0.1)', padding: '2px 8px', borderRadius: '6px', border: '1px solid rgba(52, 211, 153, 0.2)' }}>+340% Avg</span>
           </div>
         </div>
       </div>
 
       {/* Footer Call to Action */}
-      <div className="space-y-4 pt-4">
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', paddingTop: '16px' }}>
         <Link 
           href="/dashboard"
-          className="w-full flex items-center justify-center gap-2 bg-white hover:bg-slate-100 text-slate-950 font-semibold py-3.5 px-4 rounded-xl shadow-lg shadow-white/5 transition-all text-sm group"
+          style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', backgroundColor: '#ffffff', color: '#0f172a', fontWeight: 600, padding: '14px 16px', borderRadius: '12px', boxShadow: '0 10px 25px -5px rgba(255, 255, 255, 0.1)', textDecoration: 'none', fontSize: '14px', boxSizing: 'border-box' }}
         >
           <span>Launch App Experience</span>
-          <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+          <span>→</span>
         </Link>
         
-        <div className="flex items-center justify-center gap-1.5 text-xs text-slate-500">
-          <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" /> Instant access • No credit card required
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px', fontSize: '12px', color: '#64748b' }}>
+          <span>🛡️</span> Instant access • No credit card required
         </div>
       </div>
-    </div>
+    </main>
   );
 }
