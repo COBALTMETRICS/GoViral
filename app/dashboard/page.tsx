@@ -40,14 +40,14 @@ export default function DashboardPage() {
         <div className="space-y-3">
           <div className="flex items-center justify-between">
             <h2 className="text-lg font-bold tracking-tight text-white flex items-center gap-2">
-              <TrendingUp className="w-5 h-5 text-purple-400" /> Active Kenyan Trends
+              <TrendingUp className="w-5 h-5 text-purple-400" /> Active Market Trends
             </h2>
           </div>
 
           {/* Action Tabs */}
           <div className="flex gap-2 text-xs">
             <button className="flex items-center gap-1 bg-amber-500/10 border border-amber-500/30 text-amber-300 px-3 py-1.5 rounded-lg font-medium">
-              <Flame className="w-3.5 h-3.5 text-amber-400" /> Live Nairobi Feed
+              <Flame className="w-3.5 h-3.5 text-amber-400" /> Live Feed
             </button>
             <button className="flex items-center gap-1 bg-slate-900 border border-slate-800 text-slate-400 px-3 py-1.5 rounded-lg font-medium hover:text-white">
               <Bookmark className="w-3.5 h-3.5 text-slate-400" /> Saved Templates
@@ -64,13 +64,13 @@ export default function DashboardPage() {
             </div>
 
             <p className="text-sm font-semibold text-white leading-snug">
-              &ldquo;Usiwahi nunua stock kabla hujaangalia hii trick ya Nairobi soko...&rdquo;
+              &ldquo;Never buy inventory before testing this high-conversion angle...&rdquo;
             </p>
 
             <div className="bg-slate-950/60 rounded-xl p-2.5 flex items-center justify-between border border-slate-800/50">
               <div className="flex items-center space-x-2 text-xs text-slate-300">
                 <span className="text-purple-400">🎵</span>
-                <span className="truncate max-w-[200px]">Gen Z Nairobi Amapiano Mix Vol. 4</span>
+                <span className="truncate max-w-[200px]">Viral Momentum Audio Vol. 4</span>
               </div>
               <button className="text-xs text-purple-400 hover:text-purple-300 font-medium flex items-center gap-0.5">
                 Pair <ArrowUpRight className="w-3 h-3" />
