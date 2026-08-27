@@ -1,12 +1,14 @@
-// app/layout.tsx
 import './globals.css';
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 
 export const metadata: Metadata = {
-  title: 'GoViral | Algorithm Certainty for Kenyan Creators',
-  description: 'Track real-time local algorithms and deploy pre-tested winning hooks instantly.',
-  manifest: '/manifest.json',
-  viewport: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no',
+  title: 'GoViral Engine',
+  description: 'Behavioral Architecture & Viral Growth Suite',
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
 };
 
 export default function RootLayout({
@@ -16,9 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <body className="bg-slate-950 text-slate-100 min-h-screen flex justify-center antialiased selection:bg-rose-500 selection:text-white">
-        {/* Mobile-first frame wrapper for sleek presentation */}
-        <div className="w-full max-w-md bg-slate-900 min-h-screen shadow-2xl flex flex-col relative overflow-hidden border-x border-slate-800">
+      <body className="bg-[#090D16] text-slate-100 antialiased selection:bg-purple-500 selection:text-white min-h-screen">
+        <div className="relative overflow-hidden">
+          {/* Subtle ambient background glow matching Webflow/SaaS aesthetic */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-purple-600/10 blur-[120px] rounded-full pointer-events-none" />
           {children}
         </div>
       </body>
