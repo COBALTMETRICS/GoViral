@@ -1,9 +1,36 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 
 export default function DashboardPage() {
+  const [socialLink, setSocialLink] = useState('');
+  const [country, setCountry] = useState('United States');
+  const [sector, setSector] = useState('E-commerce');
+  const [isGenerating, setIsGenerating] = useState(false);
+  const [result, setResult] = useState<null | {
+    videoAngle: string;
+    caption: string;
+    music: string;
+    retention: string;
+  }>(null);
+
+  const handleRunIntelligence = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsGenerating(true);
+    setResult(null);
+
+    setTimeout(() => {
+      setIsGenerating(false);
+      setResult({
+        videoAngle: `High-retention ${sector} pattern interrupt focusing on consumer pain points.`,
+        caption: `Stop scrolling if you want to scale in ${country}. Here is the exact framework...`,
+        music: `Trending Audio - ${sector} Momentum Vol. 2`,
+        retention: '+412% Surging Retention'
+      });
+    }, 1200);
+  };
+
   return (
     <div style={{ backgroundColor: '#090D16', color: '#fefefe', minHeight: '100vh', padding: '24px', maxWidth: '420px', margin: '0 auto', fontFamily: 'system-ui, sans-serif' }}>
       
@@ -39,7 +66,101 @@ export default function DashboardPage() {
           </p>
         </div>
 
-        {/* Active Trends Section */}
+        {/* Algorithm Intelligence Input Form */}
+        <div style={{ background: 'rgba(15, 23, 42, 0.8)', border: '1px solid rgba(51, 65, 85, 0.8)', borderRadius: '16px', padding: '16px', display: 'flex', flexDirection: 'column', gap: '14px', boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.3)' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+            <h2 style={{ fontSize: '14px', fontWeight: 700, color: '#fefefe', margin: 0 }}>Algorithm Intelligence</h2>
+            <p style={{ fontSize: '11px', color: '#94a3b8', margin: 0 }}>Analyze top performers by target market and link.</p>
+          </div>
+
+          <form onSubmit={handleRunIntelligence} style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+              <label style={{ fontSize: '11px', fontWeight: 600, color: '#cbd5e1' }}>Social Media Link</label>
+              <input 
+                type="text" 
+                placeholder="https://tiktok.com/@creator/video/..." 
+                value={socialLink}
+                onChange={(e) => setSocialLink(e.target.value)}
+                required
+                style={{ backgroundColor: '#020617', border: '1px solid rgba(51, 65, 85, 0.8)', borderRadius: '8px', padding: '10px', color: '#fefefe', fontSize: '12px', outline: 'none' }}
+              />
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <label style={{ fontSize: '11px', fontWeight: 600, color: '#cbd5e1' }}>Country</label>
+                <select 
+                  value={country} 
+                  onChange={(e) => setCountry(e.target.value)}
+                  style={{ backgroundColor: '#020617', border: '1px solid rgba(51, 65, 85, 0.8)', borderRadius: '8px', padding: '10px', color: '#fefefe', fontSize: '12px', outline: 'none' }}
+                >
+                  <option value="United States">United States</option>
+                  <option value="United Kingdom">United Kingdom</option>
+                  <option value="Canada">Canada</option>
+                  <option value="Australia">Australia</option>
+                  <option value="Kenya">Kenya</option>
+                </select>
+              </div>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <label style={{ fontSize: '11px', fontWeight: 600, color: '#cbd5e1' }}>Sector</label>
+                <select 
+                  value={sector} 
+                  onChange={(e) => setSector(e.target.value)}
+                  style={{ backgroundColor: '#020617', border: '1px solid rgba(51, 65, 85, 0.8)', borderRadius: '8px', padding: '10px', color: '#fefefe', fontSize: '12px', outline: 'none' }}
+                >
+                  <option value="E-commerce">E-commerce</option>
+                  <option value="SaaS">SaaS</option>
+                  <option value="Finance">Finance</option>
+                  <option value="Fitness">Fitness</option>
+                  <option value="Creator Economy">Creator Economy</option>
+                </select>
+              </div>
+            </div>
+
+            <button 
+              type="submit" 
+              disabled={isGenerating}
+              style={{ marginTop: '6px', width: '100%', backgroundColor: '#f24b07', color: '#fefefe', fontWeight: 600, padding: '12px', borderRadius: '10px', border: 'none', cursor: 'pointer', fontSize: '13px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}
+            >
+              {isGenerating ? 'Running Algorithm Engine...' : 'Run Algorithm Intelligence →'}
+            </button>
+          </form>
+        </div>
+
+        {/* Results Box */}
+        {result && (
+          <div style={{ background: 'rgba(15, 23, 42, 0.9)', border: '1px solid rgba(242, 75, 7, 0.4)', borderRadius: '16px', padding: '16px', display: 'flex', flexDirection: 'column', gap: '12px', boxShadow: '0 10px 25px -5px rgba(242, 75, 7, 0.2)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: '11px' }}>
+              <span style={{ color: '#34d399', fontWeight: 600, backgroundColor: 'rgba(52, 211, 153, 0.1)', padding: '3px 8px', borderRadius: '6px', border: '1px solid rgba(52, 211, 153, 0.2)' }}>
+                {result.retention}
+              </span>
+              <span style={{ color: '#f24b07', fontWeight: 600 }}>Optimized for {country}</span>
+            </div>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+              <span style={{ fontSize: '10px', textTransform: 'uppercase', letterSpacing: '0.05em', color: '#f24b07', fontWeight: 600 }}>Best Video Angle</span>
+              <p style={{ fontSize: '12px', color: '#fefefe', margin: 0, fontWeight: 500 }}>{result.videoAngle}</p>
+            </div>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+              <span style={{ fontSize: '10px', textTransform: 'uppercase', letterSpacing: '0.05em', color: '#f24b07', fontWeight: 600 }}>Unbeatable Marketing Caption</span>
+              <p style={{ fontSize: '12px', color: '#cbd5e1', margin: 0, fontStyle: 'italic' }}>&ldquo;{result.caption}&rdquo;</p>
+            </div>
+
+            <div style={{ backgroundColor: 'rgba(2, 6, 23, 0.6)', borderRadius: '10px', padding: '10px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', border: '1px solid rgba(51, 65, 85, 0.6)' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '11px', color: '#cbd5e1' }}>
+                <span style={{ color: '#f24b07', fontWeight: 700 }}>♫</span>
+                <span>{result.music}</span>
+              </div>
+              <button style={{ fontSize: '10px', color: '#fefefe', backgroundColor: '#f24b07', fontWeight: 600, padding: '4px 8px', borderRadius: '6px', border: 'none', cursor: 'pointer' }}>
+                Pair
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* Active Market Trends Section */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
             <h2 style={{ fontSize: '14px', fontWeight: 700, letterSpacing: '-0.01em', color: '#fefefe', margin: 0 }}>
